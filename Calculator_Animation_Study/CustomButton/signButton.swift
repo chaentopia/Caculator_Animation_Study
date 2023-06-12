@@ -17,10 +17,10 @@ class signButton: UIButton {
         super.init(frame: CGRect.zero)
         
         self.setTitle(text, for: .normal)
-        self.titleLabel?.textColor = .white
-        self.titleLabel?.font = .systemFont(ofSize: 55, weight: UIFont.Weight(rawValue: 400))
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.font = .systemFont(ofSize: 55, weight: .regular)
         self.backgroundColor = 0xFEA00A.color
-        self.layer.cornerRadius = 0.5 * self.bounds.size.width
+        self.layer.cornerRadius = 39
         self.clipsToBounds = true
     }
     
