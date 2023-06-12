@@ -29,7 +29,7 @@
 		C379649A2A3737EE00E7F5DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C379649D2A3737EE00E7F5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C379649F2A3737EE00E7F5DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewController.swift; path = Assets.xcassets/CalculatorViewController.swift; sourceTree = "<group>"; };
+		C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		C37964B02A374BBC00E7F5DF /* numberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberButton.swift; sourceTree = "<group>"; };
 		C37964B22A374D8F00E7F5DF /* signButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signButton.swift; sourceTree = "<group>"; };
 		C37964B62A37509600E7F5DF /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -68,18 +68,50 @@
 		C37964902A3737EB00E7F5DF /* Calculator_Animation_Study */ = {
 			isa = PBXGroup;
 			children = (
-				C37964912A3737EB00E7F5DF /* AppDelegate.swift */,
-				C37964932A3737EB00E7F5DF /* SceneDelegate.swift */,
-				C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */,
-				C37964B62A37509600E7F5DF /* UIView+.swift */,
-				C37964B02A374BBC00E7F5DF /* numberButton.swift */,
-				C37964B22A374D8F00E7F5DF /* signButton.swift */,
+				C37964BB2A37510800E7F5DF /* Application */,
+				C37964BA2A3750F600E7F5DF /* ViewController */,
+				C37964B92A3750E100E7F5DF /* Extension */,
+				C37964B82A3750D600E7F5DF /* CustomButton */,
 				C37964972A3737EB00E7F5DF /* Main.storyboard */,
 				C379649A2A3737EE00E7F5DF /* Assets.xcassets */,
 				C379649C2A3737EE00E7F5DF /* LaunchScreen.storyboard */,
 				C379649F2A3737EE00E7F5DF /* Info.plist */,
 			);
 			path = Calculator_Animation_Study;
+			sourceTree = "<group>";
+		};
+		C37964B82A3750D600E7F5DF /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				C37964B02A374BBC00E7F5DF /* numberButton.swift */,
+				C37964B22A374D8F00E7F5DF /* signButton.swift */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		C37964B92A3750E100E7F5DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C37964B62A37509600E7F5DF /* UIView+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		C37964BA2A3750F600E7F5DF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C37964BB2A37510800E7F5DF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C37964912A3737EB00E7F5DF /* AppDelegate.swift */,
+				C37964932A3737EB00E7F5DF /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
