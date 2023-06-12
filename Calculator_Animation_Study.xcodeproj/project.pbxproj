@@ -15,6 +15,9 @@
 		C37964A72A37382B00E7F5DF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C37964A62A37382B00E7F5DF /* SnapKit */; };
 		C37964AA2A37383300E7F5DF /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = C37964A92A37383300E7F5DF /* Then */; };
 		C37964AC2A37388C00E7F5DF /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */; };
+		C37964AF2A3749D100E7F5DF /* SwiftyColor in Frameworks */ = {isa = PBXBuildFile; productRef = C37964AE2A3749D100E7F5DF /* SwiftyColor */; };
+		C37964B12A374BBC00E7F5DF /* numberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37964B02A374BBC00E7F5DF /* numberButton.swift */; };
+		C37964B32A374D8F00E7F5DF /* signButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37964B22A374D8F00E7F5DF /* signButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,8 @@
 		C379649D2A3737EE00E7F5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C379649F2A3737EE00E7F5DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewController.swift; path = Assets.xcassets/CalculatorViewController.swift; sourceTree = "<group>"; };
+		C37964B02A374BBC00E7F5DF /* numberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberButton.swift; sourceTree = "<group>"; };
+		C37964B22A374D8F00E7F5DF /* signButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C37964A72A37382B00E7F5DF /* SnapKit in Frameworks */,
+				C37964AF2A3749D100E7F5DF /* SwiftyColor in Frameworks */,
 				C37964AA2A37383300E7F5DF /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +69,8 @@
 				C37964912A3737EB00E7F5DF /* AppDelegate.swift */,
 				C37964932A3737EB00E7F5DF /* SceneDelegate.swift */,
 				C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */,
+				C37964B02A374BBC00E7F5DF /* numberButton.swift */,
+				C37964B22A374D8F00E7F5DF /* signButton.swift */,
 				C37964972A3737EB00E7F5DF /* Main.storyboard */,
 				C379649A2A3737EE00E7F5DF /* Assets.xcassets */,
 				C379649C2A3737EE00E7F5DF /* LaunchScreen.storyboard */,
@@ -90,6 +98,7 @@
 			packageProductDependencies = (
 				C37964A62A37382B00E7F5DF /* SnapKit */,
 				C37964A92A37383300E7F5DF /* Then */,
+				C37964AE2A3749D100E7F5DF /* SwiftyColor */,
 			);
 			productName = Calculator_Animation_Study;
 			productReference = C379648E2A3737EB00E7F5DF /* Calculator_Animation_Study.app */;
@@ -122,6 +131,7 @@
 			packageReferences = (
 				C37964A52A37382B00E7F5DF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				C37964A82A37383300E7F5DF /* XCRemoteSwiftPackageReference "Then" */,
+				C37964AD2A3749D100E7F5DF /* XCRemoteSwiftPackageReference "SwiftyColor" */,
 			);
 			productRefGroup = C379648F2A3737EB00E7F5DF /* Products */;
 			projectDirPath = "";
@@ -152,7 +162,9 @@
 			files = (
 				C37964922A3737EB00E7F5DF /* AppDelegate.swift in Sources */,
 				C37964AC2A37388C00E7F5DF /* CalculatorViewController.swift in Sources */,
+				C37964B12A374BBC00E7F5DF /* numberButton.swift in Sources */,
 				C37964942A3737EB00E7F5DF /* SceneDelegate.swift in Sources */,
+				C37964B32A374D8F00E7F5DF /* signButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +400,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		C37964AD2A3749D100E7F5DF /* XCRemoteSwiftPackageReference "SwiftyColor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/SwiftyColor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -400,6 +420,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C37964A82A37383300E7F5DF /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		C37964AE2A3749D100E7F5DF /* SwiftyColor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37964AD2A3749D100E7F5DF /* XCRemoteSwiftPackageReference "SwiftyColor" */;
+			productName = SwiftyColor;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
