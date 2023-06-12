@@ -18,6 +18,7 @@
 		C37964AF2A3749D100E7F5DF /* SwiftyColor in Frameworks */ = {isa = PBXBuildFile; productRef = C37964AE2A3749D100E7F5DF /* SwiftyColor */; };
 		C37964B12A374BBC00E7F5DF /* numberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37964B02A374BBC00E7F5DF /* numberButton.swift */; };
 		C37964B32A374D8F00E7F5DF /* signButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37964B22A374D8F00E7F5DF /* signButton.swift */; };
+		C37964B72A37509600E7F5DF /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37964B62A37509600E7F5DF /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorViewController.swift; path = Assets.xcassets/CalculatorViewController.swift; sourceTree = "<group>"; };
 		C37964B02A374BBC00E7F5DF /* numberButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberButton.swift; sourceTree = "<group>"; };
 		C37964B22A374D8F00E7F5DF /* signButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signButton.swift; sourceTree = "<group>"; };
+		C37964B62A37509600E7F5DF /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				C37964912A3737EB00E7F5DF /* AppDelegate.swift */,
 				C37964932A3737EB00E7F5DF /* SceneDelegate.swift */,
 				C37964AB2A37388C00E7F5DF /* CalculatorViewController.swift */,
+				C37964B62A37509600E7F5DF /* UIView+.swift */,
 				C37964B02A374BBC00E7F5DF /* numberButton.swift */,
 				C37964B22A374D8F00E7F5DF /* signButton.swift */,
 				C37964972A3737EB00E7F5DF /* Main.storyboard */,
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37964B72A37509600E7F5DF /* UIView+.swift in Sources */,
 				C37964922A3737EB00E7F5DF /* AppDelegate.swift in Sources */,
 				C37964AC2A37388C00E7F5DF /* CalculatorViewController.swift in Sources */,
 				C37964B12A374BBC00E7F5DF /* numberButton.swift in Sources */,
