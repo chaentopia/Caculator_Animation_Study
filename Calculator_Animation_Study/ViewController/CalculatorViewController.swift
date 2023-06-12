@@ -19,7 +19,7 @@ final class CalculatorViewController: UIViewController {
         $0.textColor = .white
     }
     
-    private lazy var ACButton = UIButton().then {
+    private lazy var ACButton = otherButton().then {
         $0.setTitle("AC", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 35, weight: .medium)
@@ -28,14 +28,14 @@ final class CalculatorViewController: UIViewController {
         $0.clipsToBounds = true
     }
     
-    private lazy var signedButton = UIButton().then {
+    private lazy var signedButton = otherButton().then {
         $0.setImage(UIImage(named:"signed"), for: .normal)
         $0.backgroundColor = 0xA5A5A5.color
         $0.layer.cornerRadius = 39
         $0.clipsToBounds = true
     }
     
-    private lazy var persentButton = UIButton().then {
+    private lazy var persentButton = otherButton().then {
         $0.setTitle("%", for: .normal)
         $0.setTitleColor(.black, for: .normal)
         $0.titleLabel?.font = .systemFont(ofSize: 40, weight: .regular)
@@ -61,7 +61,7 @@ final class CalculatorViewController: UIViewController {
     private lazy var number9Button = numberButton(text: "9")
     private lazy var dotButton = numberButton(text: ".")
     
-    private lazy var number0Button = UIButton().then {
+    private lazy var number0Button = numberButton(text: "0").then {
         $0.setTitle("0", for: .normal)
         $0.titleLabel?.textColor = .white
         $0.titleLabel?.font = .systemFont(ofSize: 39, weight: .regular)

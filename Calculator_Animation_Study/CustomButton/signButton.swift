@@ -13,6 +13,23 @@ import Then
 
 class signButton: UIButton {
     
+    override var isHighlighted: Bool {
+      didSet { self.animateWhenHighlighted() }
+    }
+    
+    private func animateWhenHighlighted() {
+        let animationBackgroundColor = self.isHighlighted ? 0xFBC88E.color : 0xFEA00A.color
+        
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.2,
+            options: .curveEaseIn,
+          animations: {
+              self.backgroundColor = animationBackgroundColor
+          }
+        )
+    }
+    
     init(text: String?) {
         super.init(frame: CGRect.zero)
         

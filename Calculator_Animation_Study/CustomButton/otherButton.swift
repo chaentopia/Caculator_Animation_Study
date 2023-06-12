@@ -1,9 +1,10 @@
 //
-//  numberButton.swift
+//  otherButton.swift
 //  Calculator_Animation_Study
 //
-//  Created by 정채은 on 2023/06/12.
+//  Created by 정채은 on 2023/06/13.
 //
+
 
 import UIKit
 
@@ -11,14 +12,14 @@ import SnapKit
 import SwiftyColor
 import Then
 
-class numberButton: UIButton {
+class otherButton: UIButton {
     
     override var isHighlighted: Bool {
       didSet { self.animateWhenHighlighted() }
     }
     
     private func animateWhenHighlighted() {
-        let animationBackgroundColor = self.isHighlighted ? 0x737373.color : 0x333333.color
+        let animationBackgroundColor = self.isHighlighted ? 0xD9D9D9.color : 0xA5A5A5.color
         
         UIView.animate(
             withDuration: 0.5,
@@ -30,15 +31,8 @@ class numberButton: UIButton {
         )
     }
     
-    init(text: String?) {
+    init() {
         super.init(frame: CGRect.zero)
-        
-        self.setTitle(text, for: .normal)
-        self.setTitleColor(.white, for: .normal)
-        self.titleLabel?.font = .systemFont(ofSize: 39, weight: .regular)
-        self.backgroundColor = 0x333333.color
-        self.layer.cornerRadius = 39
-        self.clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
