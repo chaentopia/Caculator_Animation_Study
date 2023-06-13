@@ -39,9 +39,26 @@ class numberButton: UIButton {
         self.backgroundColor = 0x333333.color
         self.layer.cornerRadius = 39
         self.clipsToBounds = true
+//        self.addTarget(self, action: #selector(numberButtonTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+//extension numberButton {
+//    @objc func numberButtonTapped(_ sender: UIButton) {
+//        let digit = sender.currentTitle!
+//        let calculatorVC = CalculatorViewController()
+//        let calculateCurrent = calculatorVC.resultLabel.text!
+//        print(calculateCurrent)
+//        if calculateCurrent == "0" {
+//            calculatorVC.resultLabel.text = digit
+//            print(calculatorVC.resultLabel.text!)
+//            print("실행")
+//        } else {
+//            calculatorVC.resultLabel.text = calculateCurrent + digit
+//        }
+//    }
+//}

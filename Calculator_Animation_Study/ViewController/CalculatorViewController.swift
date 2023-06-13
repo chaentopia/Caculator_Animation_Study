@@ -13,7 +13,10 @@ import Then
 
 final class CalculatorViewController: UIViewController {
     
-    private let resultLabel = UILabel().then {
+//    var currentNumber : Double = 0
+    
+    lazy var resultLabel = UILabel().then {
+//        $0.text = String(currentNumber)
         $0.text = "0"
         $0.font = .systemFont(ofSize: 95, weight: .light)
         $0.textColor = .white
@@ -49,19 +52,25 @@ final class CalculatorViewController: UIViewController {
     private lazy var minusButton = signButton(text: "-")
     private lazy var plusButton = signButton(text: "+")
     private lazy var equalButton = signButton(text: "=")
-
-    private lazy var number1Button = numberButton(text: "1")
-    private lazy var number2Button = numberButton(text: "2")
-    private lazy var number3Button = numberButton(text: "3")
-    private lazy var number4Button = numberButton(text: "4")
-    private lazy var number5Button = numberButton(text: "5")
-    private lazy var number6Button = numberButton(text: "6")
-    private lazy var number7Button = numberButton(text: "7")
-    private lazy var number8Button = numberButton(text: "8")
-    private lazy var number9Button = numberButton(text: "9")
-    private lazy var dotButton = numberButton(text: ".")
     
-    private lazy var number0Button = numberButton(text: "0").then {
+    
+    private func createNumberButton(title: String) -> numberButton {
+        let button = numberButton(text: title)
+        button.addTarget(self, action: #selector(numberButtonTapped(_:)), for: .touchUpInside)
+        return button
+    }
+    
+    private lazy var number1Button = createNumberButton(title: "1")
+    private lazy var number2Button = createNumberButton(title: "2")
+    private lazy var number3Button = createNumberButton(title: "3")
+    private lazy var number4Button = createNumberButton(title: "4")
+    private lazy var number5Button = createNumberButton(title: "5")
+    private lazy var number6Button = createNumberButton(title: "6")
+    private lazy var number7Button = createNumberButton(title: "7")
+    private lazy var number8Button = createNumberButton(title: "8")
+    private lazy var number9Button = createNumberButton(title: "9")
+    private lazy var dotButton = createNumberButton(title: ".")
+    private lazy var number0Button = createNumberButton(title: "0").then {
         $0.setTitle("0", for: .normal)
         $0.titleLabel?.textColor = .white
         $0.titleLabel?.font = .systemFont(ofSize: 39, weight: .regular)
@@ -80,6 +89,20 @@ final class CalculatorViewController: UIViewController {
 }
 
 extension CalculatorViewController {
+    
+    @objc func numberButtonTapped(_ sender: UIButton) {
+        let digit = sender.currentTitle!
+        let calculateCurrent = resultLabel.text!
+        print(calculateCurrent)
+        if calculateCurrent == "0" {
+            resultLabel.text = digit
+            print(resultLabel.text!)
+            print("실행")
+        } else {
+            resultLabel.text = calculateCurrent + digit
+        }
+    }
+    
     private func setUI() {
         view.backgroundColor = .black
     }
