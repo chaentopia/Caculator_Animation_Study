@@ -13,7 +13,12 @@ import Then
 
 final class CalculatorViewController: UIViewController {
     
-//    var currentNumber : Double = 0
+    var currentNumber : Double = 0
+    var isPlus : Bool = false
+    var endPlus : Bool = false
+    var isMinus: Bool = false
+    var endMinus : Bool = false
+    var sum: Double = 0
     
     lazy var resultLabel = UILabel().then {
         $0.text = "0"
@@ -49,9 +54,15 @@ final class CalculatorViewController: UIViewController {
     
     private lazy var divideButton = signButton(text: "÷")
     private lazy var multiplyButton = signButton(text: "×")
-    private lazy var minusButton = signButton(text: "-")
-    private lazy var plusButton = signButton(text: "+")
-    private lazy var equalButton = signButton(text: "=")
+    private lazy var minusButton = signButton(text: "-").then {
+        $0.addTarget(self, action: #selector(minusButtonTapped(_:)), for: .touchUpInside)
+    }
+    private lazy var plusButton = signButton(text: "+").then {
+        $0.addTarget(self, action: #selector(plusButtonTapped(_:)), for: .touchUpInside)
+    }
+    private lazy var equalButton = signButton(text: "=").then {
+        $0.addTarget(self, action: #selector(equalButtonTapped(_:)), for: .touchUpInside)
+    }
     
     
     private func createNumberButton(title: String) -> numberButton {
@@ -90,17 +101,30 @@ final class CalculatorViewController: UIViewController {
 
 extension CalculatorViewController {
     
-    //TODO: AC버튼 리셋 구현
     //TODO: 더하기 빼기 이퀄 구현
     
     @objc func numberButtonTapped(_ sender: UIButton) {
         let digit = sender.currentTitle!
-        let calculateCurrent = resultLabel.text!
+        var calculateCurrent = resultLabel.text!
         ACButton.setTitle("C", for: .normal)
-        print(calculateCurrent)
+        
+        if isPlus == true {
+            sum += currentNumber
+            calculateCurrent = ""
+            isPlus.toggle()
+            endPlus = true
+        }
+        
+        if isMinus == true {
+            sum += currentNumber
+            calculateCurrent = ""
+            isMinus.toggle()
+            endMinus = true
+        }
+        
         if calculateCurrent == "0" {
             if digit == "." {
-                resultLabel.text = calculateCurrent + digit
+                resultLabel.text = "0" + digit
             } else {
                 resultLabel.text = digit
             }
@@ -111,13 +135,46 @@ extension CalculatorViewController {
                 resultLabel.text = calculateCurrent + digit
             }
         }
+        currentNumber = Double(resultLabel.text!)!
     }
     
     @objc func ACButtonTapped(_ sender: UIButton) {
         resultLabel.text = "0"
         ACButton.setTitle("AC", for: .normal)
+        currentNumber = 0
+        sum = 0
     }
     
+    @objc func plusButtonTapped(_ sender: UIButton) {
+        isPlus = true
+    }
+    
+    @objc func minusButtonTapped(_ sender: UIButton) {
+        isMinus = true
+    }
+    
+    @objc func equalButtonTapped(_ sender: UIButton) {
+        let calculateCurrent = resultLabel.text!
+        
+        if endPlus == true {
+            sum += Double(calculateCurrent)!
+            endPlus.toggle()
+        }
+        
+        if endMinus == true {
+            sum -= Double(calculateCurrent)!
+            endMinus.toggle()
+        }
+        
+        let isInt = sum.truncatingRemainder(dividingBy: 1.0) == 0 ? true : false
+        
+        if isInt == true {
+            resultLabel.text = String(Int(sum))
+        } else {
+            resultLabel.text = String(sum)
+        }
+    }
+
     private func setUI() {
         view.backgroundColor = .black
     }
