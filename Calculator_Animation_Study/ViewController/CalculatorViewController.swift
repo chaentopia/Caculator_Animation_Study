@@ -28,6 +28,7 @@ final class CalculatorViewController: UIViewController {
         $0.backgroundColor = 0xA5A5A5.color
         $0.layer.cornerRadius = 39
         $0.clipsToBounds = true
+        $0.addTarget(self, action: #selector(ACButtonTapped(_:)), for: .touchUpInside)
     }
     
     private lazy var signedButton = otherButton().then {
@@ -88,13 +89,14 @@ final class CalculatorViewController: UIViewController {
 }
 
 extension CalculatorViewController {
-
+    
     //TODO: AC버튼 리셋 구현
     //TODO: 더하기 빼기 이퀄 구현
     
     @objc func numberButtonTapped(_ sender: UIButton) {
         let digit = sender.currentTitle!
         let calculateCurrent = resultLabel.text!
+        ACButton.setTitle("C", for: .normal)
         print(calculateCurrent)
         if calculateCurrent == "0" {
             if digit == "." {
@@ -109,6 +111,11 @@ extension CalculatorViewController {
                 resultLabel.text = calculateCurrent + digit
             }
         }
+    }
+    
+    @objc func ACButtonTapped(_ sender: UIButton) {
+        resultLabel.text = "0"
+        ACButton.setTitle("AC", for: .normal)
     }
     
     private func setUI() {
