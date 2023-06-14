@@ -16,7 +16,6 @@ final class CalculatorViewController: UIViewController {
 //    var currentNumber : Double = 0
     
     lazy var resultLabel = UILabel().then {
-//        $0.text = String(currentNumber)
         $0.text = "0"
         $0.font = .systemFont(ofSize: 95, weight: .light)
         $0.textColor = .white
@@ -89,17 +88,26 @@ final class CalculatorViewController: UIViewController {
 }
 
 extension CalculatorViewController {
+
+    //TODO: AC버튼 리셋 구현
+    //TODO: 더하기 빼기 이퀄 구현
     
     @objc func numberButtonTapped(_ sender: UIButton) {
         let digit = sender.currentTitle!
         let calculateCurrent = resultLabel.text!
         print(calculateCurrent)
         if calculateCurrent == "0" {
-            resultLabel.text = digit
-            print(resultLabel.text!)
-            print("실행")
+            if digit == "." {
+                resultLabel.text = calculateCurrent + digit
+            } else {
+                resultLabel.text = digit
+            }
         } else {
-            resultLabel.text = calculateCurrent + digit
+            if digit == "." && calculateCurrent.contains(".") == true {
+                resultLabel.text = calculateCurrent
+            } else {
+                resultLabel.text = calculateCurrent + digit
+            }
         }
     }
     
